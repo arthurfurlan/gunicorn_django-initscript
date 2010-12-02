@@ -1,4 +1,4 @@
-Initscript for gunicorn_django.
+Debian initscript for gunicorn_django.
 
  1. Save the file under the same structure of this repository:
     - /etc/init.d/gunicorn-django
