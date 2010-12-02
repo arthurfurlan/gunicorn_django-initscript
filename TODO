@@ -1,0 +1,2 @@
+ * Allow the gunicorn-django script to work with multiple configuration
+   files (/etc/default/gunicorn-django*).
