@@ -1,2 +1,1 @@
- * Allow the gunicorn_django script to work with multiple configuration
-   files (/etc/default/gunicorn_django*).
+ * Nothing for now... any ideas? :)
