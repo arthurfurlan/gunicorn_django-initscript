@@ -1,10 +1,17 @@
 Debian initscript for gunicorn_django.
 
- 1. Save the file under the same structure of this repository:
+ 1. Save the files under the same structure of this repository:
     - /etc/init.d/gunicorn_django
     - /etc/default/gunicorn_django
 
- 2. Configure the file "/etc/default/gunicorn_django".
+ 2. Configure the default settings files:
+    - /etc/default/gunicorn_django
 
- 3. Start the daemon:
-    - /etc/init.d/gunicorn_django start
+ 3. Configure your projects settings files:
+    - /etc/default/gunicorn_django-PROJ1
+    - /etc/default/gunicorn_django-PROJ2
+
+ 4. Manage the daemons:
+    - /etc/init.d/gunicorn_django start [ PROJ1 [ PROJ2 [ ... ] ] ]
+    - /etc/init.d/gunicorn_django stop [ PROJ1 [ PROJ2 [ ... ] ] ]
+    - /etc/init.d/gunicorn_django restart [ PROJ1 [ PROJ2 [ ... ] ] ]

@@ -14,5 +14,9 @@
 # Configuration file for "gunicorn_django" initscript
 #
 
+# Project root directory (contains the manage.py file)
+ROOTDIR="/your/django/project/directory"
+
 # Daemon configuration
-RUN_AS="www-data"
+DAEMON_ARGS="--workers=2 -b 127.0.0.1:8000"
+#RUN_AS="www-data"
