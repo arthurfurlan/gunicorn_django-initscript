@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ### BEGIN INIT INFO
-# Provides:          gunicorn-django
+# Provides:          gunicorn_django
 # Required-Start:    $local_fs $syslog
 # Required-Stop:     $syslog $local_fs
 # Default-Start:     2 3 4 5
@@ -14,7 +14,7 @@
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="gunicorn_django for <your-project-name>"
-NAME="gunicorn-django"
+NAME="gunicorn_django"
 DAEMON=/usr/bin/gunicorn_django
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME

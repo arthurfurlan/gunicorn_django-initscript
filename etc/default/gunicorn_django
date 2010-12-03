@@ -10,7 +10,7 @@
 # /usr/share/common-licenses/GPL-2
 
 
-# configuration file for "gunicorn-django" initscript
+# configuration file for "gunicorn_django" initscript
 
 
 # django project root directory, which contains the manage.py file
