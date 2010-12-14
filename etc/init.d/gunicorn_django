@@ -32,13 +32,20 @@ SCRIPTNAME=/etc/init.d/$NAME
 # Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
 . /lib/lsb/init-functions
 
+# Make a backup of the original $NAME value
+ORIG_NAME=$NAME
+
 _do_start_project()
 {
     NAME=$ORIG_NAME-$1
     PIDFILE=/var/run/$NAME.pid
 
-    # Read project configuration variable file if it is present
-    [ -r /etc/default/$NAME ] && . /etc/default/$NAME
+    # Return
+    #   3 if configuration file does not exist
+    [ ! -r /etc/default/$NAME ] && return 3
+
+    # Read project configuration variable file
+    . /etc/default/$NAME
 
     # Return
     #   0 if daemon has been started
@@ -53,8 +60,12 @@ _do_stop_project()
     NAME=$ORIG_NAME-$1
     PIDFILE=/var/run/$NAME.pid
 
-    # Read project configuration variable file if it is present
-    [ -r /etc/default/$NAME ] && . /etc/default/$NAME
+    # Return
+    #   3 if configuration file does not exist
+    [ ! -r /etc/default/$NAME ] && return 3
+
+    # Read project configuration variable file
+    . /etc/default/$NAME
 
     # Return
     #   0 if daemon has been stopped
@@ -79,8 +90,6 @@ _do_stop_project()
 
 do_start()
 {
-    ORIG_NAME=$NAME
-
     # Start specific projects if specified
     if [ $# -gt 1 ]; then
 
@@ -103,8 +112,6 @@ do_start()
 
 do_stop()
 {
-    ORIG_NAME=$NAME
-
     # Start specific projects if specified
     if [ $# -gt 1 ]; then
 
