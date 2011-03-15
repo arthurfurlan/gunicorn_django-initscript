@@ -10,7 +10,8 @@
 # Description:       Start and stop gunicorn_django process
 ### END INIT INFO
 
-# Author: Arthur Furlan <afurlan@afurlan.org>, Marcos Daniel Petry <marcospetry@gmail.com>
+# Author: Arthur Furlan <afurlan@afurlan.org>
+
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="generic gunicorn_django initscript"
 NAME="gunicorn_django"
