@@ -15,4 +15,5 @@
 #
 
 # Daemon configuration
+#DAEMON_PATH="/usr/bin/gunicorn_django"
 RUN_AS="www-data"

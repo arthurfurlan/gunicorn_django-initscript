@@ -15,8 +15,10 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="generic gunicorn_django initscript"
 NAME="gunicorn_django"
+DAEMON=/usr/bin/gunicorn_django
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
+DAEMON_PATH=$DAEMON
 
 # Read global configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
@@ -28,13 +30,15 @@ SCRIPTNAME=/etc/init.d/$NAME
 # Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
 . /lib/lsb/init-functions
 
-# Make a backup of the original $NAME value
+# Make a backup of the original variables values
 ORIG_NAME=$NAME
+ORIG_DAEMON_PATH=$DAEMON_PATH
 
 _do_start_project()
 {
     NAME=$ORIG_NAME-$1
     PIDFILE=/var/run/$NAME.pid
+    DAEMON_PATH=$ORIG_DAEMON_PATH
 
     # Return
     #   3 if configuration file does not exist
@@ -55,6 +59,7 @@ _do_stop_project()
 {
     NAME=$ORIG_NAME-$1
     PIDFILE=/var/run/$NAME.pid
+    DAEMON_PATH=$ORIG_DAEMON_PATH
 
     # Return
     #   3 if configuration file does not exist

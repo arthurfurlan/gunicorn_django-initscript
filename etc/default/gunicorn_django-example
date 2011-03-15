@@ -18,6 +18,6 @@
 ROOTDIR="/your/django/project/directory"
 
 # Daemon configuration
-DAEMON_PATH="/your/daemon/path/directory/gunicorn_django"
 DAEMON_ARGS="--workers=2 -b 127.0.0.1:8000"
+#DAEMON_PATH="/your/virtualenv/directory/gunicorn_django"
 #RUN_AS="www-data"
