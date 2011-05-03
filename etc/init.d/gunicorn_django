@@ -44,6 +44,9 @@ _do_start_project()
     #   3 if configuration file does not exist
     [ ! -r /etc/default/$NAME ] && return 3
 
+    # Stop the service if it's actually running
+    [ -f $PIDFILE ] && _do_stop_project $1
+
     # Read project configuration variable file
     . /etc/default/$NAME
 
