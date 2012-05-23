@@ -1,3 +1,11 @@
+IMPORTANT! This script is not needed anymore, I've sent a patch to
+the original Debian's Package and it was accepted and implemented.
+From now on, you can find this same features at the default Debian
+Package of gunicorn as you can see below:
+http://lists.debian.org/debian-backports-changes/2011/09/msg00280.html
+
+
+
 Debian initscript for gunicorn_django.
 
  1. Save the files under the same structure of this repository:
